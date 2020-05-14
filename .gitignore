@@ -3,3 +3,5 @@ aclImdb
 *.gz
 *.bz2
 .DS_Store
+
+model/data/*.csv
