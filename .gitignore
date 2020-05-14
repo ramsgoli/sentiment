@@ -1,0 +1,5 @@
+aclImdb
+.ipynb_checkpoints
+*.gz
+*.bz2
+.DS_Store
