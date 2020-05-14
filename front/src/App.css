@@ -10,9 +10,37 @@
 	height: 300px;
 }
 
+button {
+	display:inline-block;
+	padding:0.3em 1.2em;
+	margin:0 0.3em 0.3em 0;
+	border: none;
+	border-radius:2em;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-weight:300;
+	color:#FFFFFF;
+	background-color:#4eb5f1;
+	text-align:center;
+	transition: all 0.2s;
+	cursor: pointer;
+	line-height: 14px;
+}
+
+button:hover{
+	background-color:#4095c6;
+}
+
+@media all and (max-width:30em) {
+	 button {
+		  display:block;
+		  margin:0.2em auto;
+	}
+}
+
 [contenteditable][placeholder]:empty:before {
-  content: attr(placeholder);
-  position: absolute;
-  color: gray;
-  background-color: transparent;
+	content: attr(placeholder);
+	position: absolute;
+	color: gray;
+	background-color: transparent;
 }
