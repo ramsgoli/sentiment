@@ -5,10 +5,8 @@ import os
 def create_app():
     app = Flask(__name__)
 
-    print("HERE")
     vectorizer = joblib.load(os.path.join(app.root_path, 'Vectorizer.joblib.bz2'))
     clf = joblib.load(os.path.join(app.root_path, 'LogisticRegression.joblib.bz2'))
-    print("DONE")
 
     @app.route('/sentiment', methods=['POST'])
     def sentiment():
