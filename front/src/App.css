@@ -5,6 +5,18 @@
 	min-height: 100vh;
 }
 
+.positive {
+	background-color: #88B04B;
+	transition: background-color 1000ms linear;
+}
+
+.negative {
+	background-color: #FF6F61;
+	transition: background-color 1000ms linear;
+}
+
+
+
 .content {
 	width: 500px;
 	height: 300px;
