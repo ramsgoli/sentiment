@@ -17,6 +17,7 @@ export const App: React.FC<AppProps> = observer(({ store }) => {
     <div className={classes.join(' ')}>
       <div className='column'>
         <div
+          onInput={e => store.handleInput(e.currentTarget.textContent)}
           contentEditable={true}
           spellCheck={true}
           id='content'
@@ -25,7 +26,7 @@ export const App: React.FC<AppProps> = observer(({ store }) => {
         >
         </div>
         <button
-          onClick={store.getSentiment}
+          onClick={store.handleClick}
         >
           Submit
         </button>

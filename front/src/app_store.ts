@@ -1,17 +1,18 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 import { HttpStore } from './http_store';
 
 export class AppStore {
   @observable sentiment: 'positive' | 'negative' | null = null;
+  @observable text: string | null = null;
   constructor(private httpStore: HttpStore) {}
 
-  getSentiment = async (): Promise<void> => {
-    const text: string = document.getElementById('content')!.innerText
+  @action
+  handleClick = async (): Promise<void> => {
     try {
       const res = await this.httpStore.post<{response: 'positive' | 'negative'}>(
         '/sentiment',
         {
-          text
+          text: this.text
         }
       )
       this.sentiment = res.response;
@@ -19,4 +20,12 @@ export class AppStore {
       alert("Sorry, we couldn't do the thing");
     }
   };
+
+  @action
+  handleInput = (v: string | null) => {
+    this.text = v;
+    if (!this.text) {
+      this.sentiment = null;
+    }
+  } 
 }
