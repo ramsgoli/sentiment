@@ -8,6 +8,10 @@ export class AppStore {
 
   @action
   handleClick = async (): Promise<void> => {
+    if (!this.text) {
+      return;
+    }
+
     try {
       const res = await this.httpStore.post<{response: 'positive' | 'negative'}>(
         '/sentiment',
